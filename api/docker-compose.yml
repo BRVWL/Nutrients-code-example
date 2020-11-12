@@ -1,0 +1,14 @@
+version: "2"
+services:
+  postgres-server:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: postgres 
+    mem_limit: 300m
+  api_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "4000:4000"
+    mem_limit: 300m
